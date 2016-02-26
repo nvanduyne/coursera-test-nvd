@@ -17,7 +17,7 @@ h1{
     color: #4c3327;
 }
 
-#littleBox {
+h2 {
     display: inline-block;
     border: 1px solid black;
     padding: 5px;
@@ -29,7 +29,7 @@ h1{
     position: absolute;
     right: -1px;
     top: 12px;
-   
+    color: #4c3327;
 }
 
 .chicken {
@@ -62,7 +62,7 @@ h1{
     cursor: default;
 }
 
-#menuBox {
+#menubox {
     background-color: #bcaaa4;
     border: 1px solid black;
     position: relative;
@@ -72,6 +72,7 @@ h1{
     margin-bottom: 15px;
     padding: 20px;
     min-width: 300px;
+    overflow: hidden;
 }        
 
 /************* Responsive framework *************/
