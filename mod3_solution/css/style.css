@@ -1,0 +1,75 @@
+/* sets up our body color, font size,font, and font color */
+
+* {
+    box-sizing: border-box;
+}
+body{
+
+   font-size: 16px;/* sets the general font size */
+   margin: 0;
+   background-color: #d7ccc8;
+   font-family: ‘Oxygen’, sans-serif; /*a google font used with link in the page*/
+
+}
+h1{
+    text-align: center;
+    font-size: 1.75em;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #af3e20;
+}
+.chickenBox {
+    background-color: #bcaaa4;
+    position: relative;
+    min-height: 700px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    min-width: 300px;
+}
+.beefBox {
+    background-color: #bcaaa4;
+    position: relative;
+    min-height: 700px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    min-width: 300px;
+}
+.sushiBox {
+    background-color: #bcaaa4;
+    position: relative;
+    min-height: 700px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    min-width: 300px;
+}
+h2 {
+	text-align: center;
+	margin-top: -13px; /* brings h2 headings closer to the top of the section box*/
+}
+h2:hover {
+    color: #af3e20;
+    cursor: default;
+}
+
+/**Header Section**/
+
+#header-nav{
+background-color: #cc9900;
+/*eliminate rounded corners from BootStrap*/
+border-radius: 0;
+border:0;
+}
+.navbar-brand{
+margin-top: -30px;
+}
+/* Eliminates the underline when cursor is on the brand */
+.navbar-brand a:hover, .navbar-brand a:focus{
+	text-decoration: none;
+}
