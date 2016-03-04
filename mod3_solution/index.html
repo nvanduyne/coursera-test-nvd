@@ -13,6 +13,7 @@
 
     
     <body>
+        <a name="top"></a><!--here as an in page link for back to top-->
         <header>
         <!--Create Nav Bar  navbar and navbar-default are from bootstrap css -->
             <nav id="header-nav" class="navbar navbar-default">
@@ -31,30 +32,52 @@
                       <span class="icon-bar"></span>
                     </button>
                   </div>
+                  <div id="collapsable-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav navbar-right">
+                     <li>
+                      <a href=#chickenSection>
+                        <span class="icon-chicken"></span><br class="hidden-xs"> Chicken</a>
+                     </li>
+                     <li>
+                      <a href=#beefSection>
+                       <span class="icon-steak"></span><br class="hidden-xs"> Beef</a>
+                     </li>
+                     <li>
+                      <a href="#sushiSection">
+                      <span class="icon-fish"></span><br class="hidden-xs"> Sushi</a>
+                     </li>
+                    </ul><!-- #nav-list -->
+                   </div><!-- .collapse .navbar-collapse -->
                </div>
-
             </nav>
         </header>
         <h1>Our Menu</h1>
         <div class="row">
         <div class="col-lg-4 col-md-6">
-           <section class="chickenBox">
+           <section class="chickenBox"><a  name="chickenSection"></a>
             <h2 class="chicken"><i class="icon-chicken"></i>&nbspChicken</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a laoreet neque. Aenean eu purus ac purus ultrices faucibus. Etiam semper est vel tellus hendrerit, quis tristique eros viverra. Duis metus eros, tincidunt quis malesuada id, pellentesque sed augue. Sed ipsum nulla, tristique accumsan faucibus vel, ullamcorper nec libero.</p>
+            <p class="hidden-lg"><a id="topChicken" href="#top">Back to top</a></p>
             </section>
         </div>
         <div class="col-lg-4 col-md-6">
-           <section class="beefBox">
+           <section  class="beefBox"><a name="beefSection"></a>
             <h2 class="beef"><i class="icon-steak"></i>&nbspBeef</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a laoreet neque. Aenean eu purus ac purus ultrices faucibus. Etiam semper est vel tellus hendrerit, quis tristique eros viverra. Duis metus eros, tincidunt quis malesuada id, pellentesque sed augue. Sed ipsum nulla, tristique accumsan faucibus vel, ullamcorper nec libero.</p>
+            <p class="hidden-lg"><a id="topBeef" href="#top">Back to top</a></p>
             </section>
         </div>
         <div class="col-lg-4 col-md-12">
-            <section class="sushiBox">
+            <section  class="sushiBox"><a name="sushiSection"></a>
             <h2 class="sushi"><i class="icon-fish"></i>&nbspSushi</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a laoreet neque. Aenean eu purus ac purus ultrices faucibus. Etiam semper est vel tellus hendrerit, quis tristique eros viverra. Duis metus eros, tincidunt quis malesuada id, pellentesque sed augue. Sed ipsum nulla, tristique accumsan faucibus vel, ullamcorper nec libero.</p>
+            <p class="hidden-lg"><a id="topSushi" href="#top">Back to top</a></p>
             </section>
         </div>
+        <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
     </body>
     
 </html>

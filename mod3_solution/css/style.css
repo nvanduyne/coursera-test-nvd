@@ -1,14 +1,17 @@
+/***GENERAL BODY STYLING****/
 /* sets up our body color, font size,font, and font color */
 
 * {
     box-sizing: border-box;
+    font-family: ‘Oxygen’, sans-serif; /*a google font used with link in the page*/
+
 }
 body{
 
    font-size: 16px;/* sets the general font size */
    margin: 0;
    background-color: #d7ccc8;
-   font-family: ‘Oxygen’, sans-serif; /*a google font used with link in the page*/
+  
 
 }
 h1{
@@ -57,9 +60,8 @@ h2:hover {
     color: #af3e20;
     cursor: default;
 }
-
+/***END BODY STYLING***/
 /**Header Section**/
-
 #header-nav{
 background-color: #cc9900;
 /*eliminate rounded corners from BootStrap*/
@@ -67,9 +69,72 @@ border-radius: 0;
 border:0;
 }
 .navbar-brand{
-margin-top: -30px;
+margin-top: -20px;
 }
 /* Eliminates the underline when cursor is on the brand */
 .navbar-brand a:hover, .navbar-brand a:focus{
 	text-decoration: none;
 }
+/*puts a margin over our menu items in the navbar(they disappear when the drop down is present)*/
+#nav-list {
+	margin-top: 10px;
+}
+/* color and alignment of menu items */
+#nav-list a {
+	color: #af3e20;
+	text-align: center;
+}
+#nav-list a:hover {
+ color:#000000;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #af3e20;  
+}
+.navbar-header button.navbar-toggle {
+  background-color: #cc9900;
+  clear: both;
+  margin-top: -10px;
+}
+/* END HEADER */
+
+/***MEDIA QUERIES*******/
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+
+}
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-header button.navbar-toggle {
+  background-color: #cc9900;
+  clear: both;
+  margin-top: -40px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  }
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+  #collapsable-nav{
+  	background-color: #cc9948;
+  	border: 1px solid #af3e20;
+  }
+
+
