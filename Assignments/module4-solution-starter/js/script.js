@@ -30,10 +30,10 @@ var insertHtml = function (selector, html) {
 };
 
 // Show loading icon inside element identified by 'selector'.
-var showLoading = function (selector) {
+var showLoading = function (selector) { //receive #main-content//
   var html = "<div class='text-center'>";
   html += "<img src='images/ajax-loader.gif'></div>";
-  insertHtml(selector, html);
+  insertHtml(selector, html); //return #main-content, <div class='text-center'><img src='images/ajax-loader.gif'></div>//
 };
 
 // Return substitute of '{{propName}}' 
@@ -80,14 +80,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-showLoading("#main-content");
+showLoading("#main-content");//pass #main-content to showLoading -- show loading passes back a div with the loading gif//
 $ajaxUtils.sendGetRequest(
-  homeHtmlURL, 
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  }, 
-  false); // Explicitely setting the flag to get JSON from server processed into an object literal
+  allCategoriesUrl, buildAndShowHomeHTML, //get home page and main menus
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -98,9 +94,10 @@ function buildAndShowHomeHTML (categories) {
   
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (homeHtml) {
-
+    homeHtmlUrl, function (homeHtml) {
+       document.querySelector("#main-content")
+      .innerHTML = homeHtml; //get home page and main menus
+   
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.

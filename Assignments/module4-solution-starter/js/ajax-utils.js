@@ -1,3 +1,4 @@
+//IIFE starts with the line here (funtion(gloabal)
 (function (global) {
 
 // Set up a namespace for our utility
@@ -5,6 +6,7 @@ var ajaxUtils = {};
 
 
 // Returns an HTTP request object
+//not directly available to user of ajaxUtils.js
 function getRequestObject() {
   if (window.XMLHttpRequest) {
     return (new XMLHttpRequest());
@@ -20,17 +22,17 @@ function getRequestObject() {
 }
 
 
-// Makes an Ajax GET request to 'requestUrl'
+// Makes an Ajax GET request to the server to request a 'requestUrl'
 ajaxUtils.sendGetRequest = 
   function(requestUrl, responseHandler, isJsonResponse) {
-    var request = getRequestObject();
-    request.onreadystatechange = 
+    var request = getRequestObject(); //uses XMLHTTP request from above
+    request.onreadystatechange = //browser to server network communcations
       function() { 
-        handleResponse(request, 
+        handleResponse(request, //variable from line above
                        responseHandler,
                        isJsonResponse); 
       };
-    request.open("GET", requestUrl, true);
+    request.open("GET", requestUrl, true);//true is for aysnchronouse
     request.send(null); // for POST only
   };
 
