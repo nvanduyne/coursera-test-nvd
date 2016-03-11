@@ -136,5 +136,7 @@ margin-top: -20px;
   	background-color: #cc9948;
   	border: 1px solid #af3e20;
   }
-
-
+  .navbar-toggle .icon-bar{
+  	background-color: #cc9948;
+  }
+   
