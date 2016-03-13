@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // On first load, show home view
 showLoading("#main-content");//pass #main-content to showLoading -- show loading passes back a div with the loading gif//
 $ajaxUtils.sendGetRequest(
-  allCategoriesUrl, buildAndShowHomeHTML(categories), //get home page and main menus
+  allCategoriesUrl, buildAndShowHomeHTML,//(categories), //get home page and main menus
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
