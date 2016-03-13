@@ -102,8 +102,12 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      chooseRandomCategory(categories);
-      console.log(randomArrayIndex);
+      var chosenCategoryShortName = function({
+        chooseRandomCategory(categories),responseData
+        )};
+       chosenCategoryShortName;
+      //chooseRandomCategory(categories);
+      console.log(chosenCategoryShortName);
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
@@ -135,7 +139,7 @@ function chooseRandomCategory (categories) {
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
 console.log(categories);//returned an array of objects so I know the heruko json has returned ok
   // return category object with that randomArrayIndex
-  console.log(randomArrayIndex);
+  console.log(randomArrayIndex);//randomly selected number changes with each reload
   return categories[randomArrayIndex];
 }
 
