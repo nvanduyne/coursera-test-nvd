@@ -30,10 +30,10 @@ var insertHtml = function (selector, html) {
 };
 
 // Show loading icon inside element identified by 'selector'.
-var showLoading = function (selector) {
+var showLoading = function (selector) { //receive #main-content//
   var html = "<div class='text-center'>";
   html += "<img src='images/ajax-loader.gif'></div>";
-  insertHtml(selector, html);
+  insertHtml(selector, html); //return #main-content, <div class='text-center'><img src='images/ajax-loader.gif'></div>//
 };
 
 // Return substitute of '{{propName}}' 
@@ -80,10 +80,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-showLoading("#main-content");
+showLoading("#main-content");//pass #main-content to showLoading -- show loading passes back a div with the loading gif//
 $ajaxUtils.sendGetRequest(
-  allCategoriesUrl, 
-  buildAndShowHomeHTML, // Creates the HTML Page
+  allCategoriesUrl, buildAndShowHomeHTML,  //get home page and main menus ---THIS SEEMS TO WORK
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
@@ -95,15 +94,10 @@ function buildAndShowHomeHTML (categories) {
   
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (homeHtml) {
-
-      // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
-      // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
-      // variable's name implies it expects.
+    homeHtmlUrl, function (homeHtml){
       var chosenCategoryShortName = chooseRandomCategory(categories);
-      console.log(chosenCategoryShortName.short_name);
-
+      console.log(chosenCategoryShortName.short_name);//Prints a name that matches the index in heruko file
+      },
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
       // Look through this code for an example of how to do use the insertProperty function.
@@ -115,16 +109,13 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       // 
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName",
-      		"'" + chosenCategoryShortName.short_name + "'");
-      console.log(homeHtmlToInsertIntoMainPage);
+      // var homeHtmlToInsertIntoMainPage = ....
+      //
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that. 
-      // ....
-      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-    },
+      // ...
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
@@ -133,8 +124,9 @@ function buildAndShowHomeHTML (categories) {
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-
+console.log(categories);//returned an array of objects so I know the heruko json has returned ok
   // return category object with that randomArrayIndex
+  console.log(randomArrayIndex);//randomly selected number changes with each reload
   return categories[randomArrayIndex];
 }
 
@@ -342,3 +334,4 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
+
